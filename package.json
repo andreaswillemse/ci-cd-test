@@ -1,0 +1,14 @@
+{
+  "name": "ci-cd-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+"scripts": {
+  "build": "cp -r src dist",
+  "test": "echo 'no tests yet' && exit 0"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
