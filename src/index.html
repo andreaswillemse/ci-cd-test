@@ -119,10 +119,86 @@
     }
 
     footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 0;
+    }
+
+    .footer-copyright {
       text-align: center;
       padding: 2rem;
       color: #6b7280;
-      border-top: 1px solid #e5e7eb;
+    }
+
+    .footer-map-section {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .footer-map-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-map-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      aspect-ratio: 16 / 9;
+      min-height: 200px;
+    }
+
+    .footer-map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .footer-address-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .footer-address-card h3 {
+      font-size: 1rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-address-card .address {
+      font-size: 1.1rem;
+      color: #1a1a2e;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .footer-address-card .get-directions {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .footer-address-card .get-directions:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
     }
   </style>
 </head>
@@ -160,7 +236,33 @@
   </section>
 
   <footer id="about">
-    <p>&copy; 2026 CI/CD Test Project</p>
+    <div class="footer-map-section">
+      <div class="footer-map-wrapper">
+        <!-- Replace YOUR_GOOGLE_MAPS_API_KEY with your Maps Embed API key from Google Cloud Console -->
+        <iframe
+          src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Asterweg+109,+Amsterdam"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map showing Asterweg 109, Amsterdam"
+        ></iframe>
+      </div>
+      <div class="footer-address-card">
+        <h3>Visit us</h3>
+        <p class="address">Asterweg 109<br>Amsterdam</p>
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=Asterweg+109,+Amsterdam"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="get-directions"
+        >
+          Get directions →
+        </a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2026 CI/CD Test Project</p>
+    </div>
   </footer>
 </body>
 </html>
